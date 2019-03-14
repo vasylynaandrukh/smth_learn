@@ -17,10 +17,10 @@ module.exports = (() => {
         let models = {};
 
         function getModels() {
-            fs.readdir('./dataBase/models', (err, files) => {
+            fs.readdir('./DataBase/models', (err, files) => {
                 files.forEach(file => {
                     const modelName = file.split('.')[0];
-                    models[modelName] = client.import(resolve(`./dataBase/models/${modelName}`));
+                    models[modelName] = client.import(resolve(`./DataBase/models/${modelName}`));
                 });
             });
         }
