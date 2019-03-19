@@ -9,8 +9,20 @@
 </head>
 <body>
 
-<h1>Hello</h1>
+{{#if users}}
+   {{#each users}}
+       {{this.name}}
+       <br>
+       {{this.email}}
+       <br>
+       <a href="/delete/{{this.id}}">
+           DELETE USER
+       </a>
+       <p></p>
+   {{/each}}
 
-<a href="/login"> Keep calm and login</a>
+{{else}} NO CAFE
+{{/if}}
+
 </body>
 </html>

@@ -14,12 +14,19 @@ app.engine('.handlebars', expBars({
 app.set('views engine', '.handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
-// let DataBase = require ('./DataBase').getInstance();
-// DataBase.setModels();
+const DataBase = require ('./DataBase').getInstance();
+DataBase.setModels();
 
-app.get('/', (req, res) => {
-    res.render('main')
-});
+const mainControllers = require('./controllers/main');
+const loginPageControllers = require('./controllers/loginPage');
+const logUser = require('./controllers/user/loginUser');
+const deleteUser = require('./controllers/user/deleteUser');
+
+
+app.get('/',mainControllers );
+app.get('/login',loginPageControllers );
+
+app.post('/loguser', logUser);
 
 app.listen(5000, () => {
     console.log('listening 5000...')

@@ -1,15 +1,15 @@
 const Sequelize = require('sequelize');
 const fs = require('fs');
 const resolve = require('path').resolve;
-const DbName = 'vvvom';
-const DbUser = 'root';
-const DbPass = 'vasylyna';
+// const DbName = 'vvvom';
+// const DbUser = 'root';
+// const DbPass = 'vasylyna';
 
 module.exports = (() => {
     let instance;
 
     function initConnection() {
-        let client = new Sequelize(DbName,DbUser,DbPass, {
+        let client = new Sequelize('vvvom','root','vasylyna', {
             host: 'localhost',
             dialect: 'mysql',
             operatorsAliases: false,

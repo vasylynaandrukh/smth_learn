@@ -1,4 +1,5 @@
-module.export = (sequelize, DataTypes)=> {
+`use strict`;
+module.exports = (sequelize, DataTypes)=> {
     const cafe = sequelize.define('cafe',{
         id: {
             type: DataTypes.INTEGER,
@@ -16,6 +17,6 @@ module.export = (sequelize, DataTypes)=> {
         tableName: 'cafe',
         timestamps:false
 
-    });
-    return cafe
+    })
+    return cafe;
 }
