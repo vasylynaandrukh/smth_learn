@@ -27,6 +27,7 @@ app.get('/',mainControllers );
 app.get('/login',loginPageControllers );
 
 app.post('/loguser', logUser);
+app.get('/delete/:id', deleteUser);
 
 app.listen(5000, () => {
     console.log('listening 5000...')

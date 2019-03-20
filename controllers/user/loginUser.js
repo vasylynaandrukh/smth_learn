@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
       const {name, password} = req.body;
       if (!cafeModel) throw new Error('Cant connect to database');
       if (!name || !password)throw new Error('Please fill in  empty field');
+      console.log(name, password);
       const user = await cafeModel.findOne({
           where:{
               name,

@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes)=> {
 
     });
     const cafeId = sequelize.import('./Cafe.js');
-    menu.belongsTo(cafeId, {foreignKey:"cafe_id"});
+    menu.belongsTo(cafeId, {foreignKey:'cafe_id'});
     const drinkId = sequelize.import('./Drink.js');
     menu.belongsTo(drinkId, {foreignKey: 'drink_id'});
     const foodId = sequelize.import('./Food.js');
